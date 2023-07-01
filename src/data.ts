@@ -53,9 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!postsContainer) return;
 
-  posts.forEach((post) => {
+  posts.forEach((post, index) => {
     const postElement = document.createElement('div');
-    postElement.id = 'div1';
+    const idDiv = 'div' + index;
+    postElement.id = idDiv;
 
     postElement.addEventListener('click', () => {
       setDetails(post.id);
