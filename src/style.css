@@ -44,7 +44,7 @@ header{
   }
 
   
-  .title-article {
+  .user-posts {
     display: inline-block;
     height: 46px;
     top: 167px;
@@ -59,4 +59,77 @@ header{
     font-family: 'Inter', sans-serif;
   }
 
+
+  /*aqui*/
+
+  .image-post{
+    width: 409px;
+    height: 273px;
+  }
+
+  .image-comments{
+    width: 771px;
+    height: 311.4px
+  }
+
+  .title-post{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #3A4F9A;
+  }
+
+  .title-comments{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #3A4F9A;
+  }
+
+  .body-post{
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #575757;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+  .body-comments{
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #575757;
+  }
+
+  .expand-post{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #3A4F9A;
+  }
+
+  .email-comments{
+    color: #3A4F9A;
+  }
+
+  
 

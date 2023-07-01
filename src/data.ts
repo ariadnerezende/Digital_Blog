@@ -68,7 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
       postElement.addEventListener('mouseout', () => {
         postElement.style.cursor = 'default';
       });
-  
+      
+      const userPostsElement = document.createElement('h2');
+      userPostsElement.textContent = 'User posts';
+      postElement.appendChild(userPostsElement);
+      userPostsElement.classList.add('user-posts');
+
+
       const imageElement = document.createElement('img');
       imageElement.src = post.imageUrl;
       postElement.appendChild(imageElement);
@@ -86,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       const goExpand = document.createElement('p');
       goExpand.textContent = 'Expand...';
-      bodyElement.appendChild(goExpand);
+      postElement.appendChild(goExpand);
       goExpand.classList.add('expand-post');
   
       postsContainer.appendChild(postElement);
@@ -155,11 +161,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
         commentsElement.appendChild(commentElement);
       });
-    
+      
+      const divButton = document.createElement('div');
       const backButton = document.createElement('a');
-      backButton.classList.add('back-button');
+      const imageButton = document.createElement('img');
+      const imageButton2 = document.createElement('img');
+      divButton.appendChild(backButton);
       backButton.href = 'index.html';
-      backButton.textContent = 'Go Back';
-      postDetailsContainer.appendChild(backButton);
+      imageButton.src = './images/goBack.png';
+      imageButton2.src = './images/circleBack.png';
+      backButton.appendChild(imageButton);
+      backButton.appendChild(imageButton2);
+      postDetailsContainer.appendChild(divButton);
+      divButton.id = 'div-button';
+      imageButton.classList.add('image-button1');
+      imageButton2.classList.add('image-button2');
     }
   });
