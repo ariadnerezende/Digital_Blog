@@ -28,9 +28,9 @@ var posts = [
     new Post(1, 'The role of AI in digital transformation', 'https://images.pexels.com/photos/8728379/pexels-photo-8728379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'AI plays a transformative role in the digital landscape, revolutionizing industries and driving digital transformation. With its ability to process vast amounts of data and derive actionable insights, AI empowers organizations to make data-driven decisions, enhance operational efficiency, and deliver personalized customer experiences.In the realm of data analysis, AI algorithms can uncover hidden patterns, correlations, and trends that humans might miss. This enables businesses to gain a deeper understanding of their customers, optimize processes, and identify new market opportunities. AI-powered predictive analytics also enables organizations to forecast future outcomes, helping them make proactive decisions and stay ahead of the competition.'),
     new Post(2, 'Data privacy: challenges and solutions in the digital age', 'https://images.pexels.com/photos/5240543/pexels-photo-5240543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Data privacy is a significant concern in the digital age, posing challenges and demanding solutions. With the increasing collection and utilization ofpersonal data, protecting individuals privacy has become paramount. Challenges include ensuring consent, securing data storage, and addressing evolving privacy regulations. Solutions involve implementing robust encryption methods, enhancing user control over data, and promoting transparency in data handling practices. Upholding data privacy rights requires collaboration between organizations, policymakers, and individuals to establish a balance between data-driven innovation and safeguarding personal information.'),
     new Post(3, 'The impact of social media on today society', 'https://images.pexels.com/photos/8088443/pexels-photo-8088443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Social media has had a monumental impact on todays society. It has revolutionized communication, connectivity, and the way information is shared. With billions of users worldwide, social media platforms have become powerful tools for networking, socializing, and even conducting business. However, this pervasive influence has its drawbacks. Privacy concerns, cyberbullying, and the addictive nature of social media have emerged as significant challenges. Moreover, the rapid dissemination of fake news and the amplification of echo chambers have led to polarization and societal divisions. As social media continues to evolve, it is crucial to address these issues and foster a more responsible and inclusive digital environment.'),
-    new Post(4, 'Blockchain technology: revolutionizing digital trust', 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Blockchain technology is at the forefront of revolutionizing digital trust across industries. With its decentralized and transparent nature, blockchain ensures security, immutability, and accountability in transactions. Beyond cryptocurrencies, it has far-reaching applications in areas such as supply chain management, healthcare, voting systems, and intellectual property rights. By eliminating intermediaries and providing a tamper-proof record of transactions, blockchain fosters trust among participants and reduces the risk of fraud. However, challenges like scalability and regulatory frameworks need to be addressed for widespread adoption. Overall, the transformative potential of blockchain in establishing trust in the digital era is vast and holds promise for a more secure and efficient future.'),
+    new Post(4, 'Blockchain technology: revolutionizing digital trust', 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Blockchain technology is at the forefront of revolutionizing digital trust across industries. With its decentralized and transparent nature, blockchain ensures security, immutability, and accountability in transactions. Beyond cryptocurrencies, it has far-reaching applications in areas such as supply chain management, healthcare, voting systems, and intellectual property rights. By eliminating intermediaries and providing a tamper-proof record of transactions, blockchain fosters trust among participants and reduces the risk of fraud. However, challenges like scalability need to be addressed for widespread adoption. Overall, the transformative potential of blockchain in establishing trust in the digital era is vast and holds promise for a more secure and efficient future.'),
     new Post(5, 'Renewable Energy Technologies: towards a sustainable future', 'https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Renewable energy technologies are paving the way towards a sustainable future. As the world grapples with the challenges of climate change and depleting fossil fuel resources, the shift towards renewables has become imperative. Solar, wind, hydro, and geothermal power offer clean, abundant, and environmentally friendly alternatives. These technologies have witnessed significant advancements, becoming more efficient and cost-effective over time. By reducing greenhouse gas emissions and dependence on finite resources, renewable energy technologies contribute to mitigating climate change and promoting energy security. As we embrace these sustainable solutions, we move closer to a greener, more resilient future for generations to come.'),
-    new Post(6, 'The role of technology in 21st century education', 'https://images.pexels.com/photos/4144224/pexels-photo-4144224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Technology plays a crucial role in 21st-century education, transforming the way we teach and learn. Digital tools and platforms enhance accessibility, collaboration, and engagement in the classroom. Interactive whiteboards, online resources, and educational apps provide dynamic and personalized learning experiences. Technology also enables distance learning, breaking down geographical barriers and expanding educational opportunities. Moreover, it equips students with essential digital literacy skills for the modern workforce. However, effective integration and proper digital citizenship education are vital to maximize the benefits of technology in education and ensure equitable access for all learners.'),
+    new Post(6, 'The role of technology in 21st century education', 'https://images.pexels.com/photos/4144224/pexels-photo-4144224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'Technology plays a crucial role in 21st-century education, transforming the way we teach and learn. Digital tools and platforms enhance accessibility, collaboration, and engagement in the classroom. Interactive whiteboards and educational apps provide dynamic and personalized learning experiences. Technology also enables distance learning, breaking down geographical barriers and expanding educational opportunities. Moreover, it equips students with essential digital literacy skills for the modern workforce. However, effective integration and proper digital citizenship education are vital to maximize the benefits of technology in education and ensure equitable access for all learners.'),
 ];
 var commentsPosts = [
     new PostDetails(1, 1, 'sarah.williams@example.com: ', 'Artificial Intelligence has truly revolutionized the way businesses operate in the digital age. Its ability to analyze vast amounts of data and make informed decisions in real-time has enabled companies to streamline their processes and improve efficiency.'),
@@ -56,9 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var postsContainer = document.getElementById('postsContainer');
     if (!postsContainer)
         return;
-    posts.forEach(function (post) {
+    posts.forEach(function (post, index) {
         var postElement = document.createElement('div');
-        postElement.id = 'div1';
+        var idDiv = 'div' + index;
+        postElement.id = idDiv;
         postElement.addEventListener('click', function () {
             setDetails(post.id);
         });
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         postElement.addEventListener('mouseout', function () {
             postElement.style.cursor = 'default';
         });
-        var userPostsElement = document.createElement('h2');
+        var userPostsElement = document.createElement('p');
         userPostsElement.textContent = 'User posts';
         postElement.appendChild(userPostsElement);
         userPostsElement.classList.add('user-posts');
@@ -111,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         postsContainer.innerHTML = '';
         var postDetailsContainer = document.createElement('div');
         postsContainer.appendChild(postDetailsContainer);
-        postDetailsContainer.id = 'div2';
+        postDetailsContainer.id = 'div-body2';
         var imageElement = document.createElement('img');
         imageElement.src = post.imageUrl;
         postDetailsContainer.appendChild(imageElement);
@@ -125,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
         postDetailsContainer.appendChild(bodyElement);
         bodyElement.classList.add('body-comments');
         var commentsElement = document.createElement('div');
-        postDetailsContainer.appendChild(commentsElement);
-        commentsElement.id = 'div3';
+        postsContainer.appendChild(commentsElement);
+        commentsElement.id = 'div-comments';
         var postDetails = getPostDetailsId(post.id);
         postDetails.forEach(function (comment, index) {
             var commentElement = document.createElement('p');
